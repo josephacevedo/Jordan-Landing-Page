@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  color: rgb(239, 251, 64);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+.container h1 {
+  margin-top: 10px;
+  font-size: 3rem;
+  
+}
+
+.container p {
+  font-size: 2rem;
+}
+
+.hero {
+  background: url("./img/Retro1.png") no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero * {
+  z-index: 10;
+}
+
+.box {
+  width: 100%;
+  height: 25%;
+  background: black;
+  position: absolute;
+  top: 0;
+  /* animation: move 2s ease forwards; */
+  background-color: #747474;
+}
+
+.box:nth-of-type(odd) {
+  animation: moveright 3s ease forwards;
+}
+
+.box:nth-of-type(even) {
+  animation: moveleft 3s ease forwards;
+}
+
+.box:nth-of-type(2) {
+  top: 25%;
+}
+.box:nth-of-type(3) {
+  top: 50%;
+}
+.box:nth-of-type(4) {
+  top: 75%;
+}
+
+@keyframes moveleft {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+@keyframes moveright {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+
